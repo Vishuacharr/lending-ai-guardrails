@@ -1,0 +1,126 @@
+{
+  "generated_at": "2026-05-16T21:23:11.503341+00:00",
+  "summary": {
+    "total_evaluations": 5,
+    "auto_approve_count": 4,
+    "human_review_count": 1,
+    "reject_count": 0,
+    "auto_approve_rate": 0.8,
+    "human_review_rate": 0.2,
+    "reject_rate": 0.0,
+    "avg_faithfulness": 0.3392,
+    "avg_relevance": 0.286,
+    "avg_accuracy": 1.0,
+    "avg_confidence": 0.9667
+  },
+  "records": [
+    {
+      "record_id": "1e51dd55-8ba6-49a7-8eb2-22d521438ce7",
+      "timestamp": "2026-05-16T21:23:11.493183+00:00",
+      "use_case": "income_verification",
+      "loan_application_id": "LA-001",
+      "ai_output_summary": "Income verification complete for application LA-001. Gross annual income extracted from W-2 Box 1: $145,000.00. Monthly equivalent: $12,083.33. Income matches borrower-stated amount of $145,000 \u2014 no discrepancy detected. Document appears authentic and complete. Recommended: verified.",
+      "faithfulness_score": 0.2308,
+      "relevance_score": 0.2474,
+      "accuracy_score": 1.0,
+      "composite_score": 0.4665,
+      "intent_confidence": 1.0,
+      "transaction_confidence": 1.0,
+      "combined_confidence": 1.0,
+      "routing_decision": "AUTO_APPROVE",
+      "routing_reason": "Confidence 1.000 exceeds auto-approve threshold 0.85. Flags: none",
+      "flags": [],
+      "metadata": {
+        "document_type": "W2",
+        "tax_year": 2025
+      }
+    },
+    {
+      "record_id": "b1b18c22-a211-419e-adc8-28e8623ce7c7",
+      "timestamp": "2026-05-16T21:23:11.495337+00:00",
+      "use_case": "closing_disclosure",
+      "loan_application_id": "LA-002",
+      "ai_output_summary": "Closing Disclosure generated for LA-002. Total closing costs: $9,000.00. Line items identified: Origination $1,425, Appraisal $550, Title $950. Total of itemized fees: $2,925. WARNING: CD does not balance. Discrepancy of $6,075 between stated total and sum of line items. TRID violation \u2014 requires co",
+      "faithfulness_score": 0.3418,
+      "relevance_score": 0.3125,
+      "accuracy_score": 1.0,
+      "composite_score": 0.5305,
+      "intent_confidence": 0.6667,
+      "transaction_confidence": 1.0,
+      "combined_confidence": 0.8334,
+      "routing_decision": "HUMAN_REVIEW",
+      "routing_reason": "Confidence 0.833 is in human-review range [0.6, 0.85). Flags: Missing expected field: cash_to_close",
+      "flags": [
+        "Missing expected field: cash_to_close"
+      ],
+      "metadata": {
+        "trid_check": "Closing Disclosure out of balance by $6075.00",
+        "severity": "VIOLATION"
+      }
+    },
+    {
+      "record_id": "9890b235-8d30-4b2a-a3c9-b82cb6f7993f",
+      "timestamp": "2026-05-16T21:23:11.497675+00:00",
+      "use_case": "appraisal_comparison",
+      "loan_application_id": "LA-001",
+      "ai_output_summary": "Appraisal comparison for LA-001: Two reports submitted with conflicting values. Report A (APR-001-A) values property at $375,000; Report B (APR-001-B) values at $340,000. Variance: $35,000 (9.3%). This exceeds the 10% maximum variance threshold. Report A uses more recent comparables and C2 condition",
+      "faithfulness_score": 0.341,
+      "relevance_score": 0.2096,
+      "accuracy_score": 1.0,
+      "composite_score": 0.4993,
+      "intent_confidence": 1.0,
+      "transaction_confidence": 1.0,
+      "combined_confidence": 1.0,
+      "routing_decision": "AUTO_APPROVE",
+      "routing_reason": "Confidence 1.000 exceeds auto-approve threshold 0.85. Flags: none",
+      "flags": [],
+      "metadata": {
+        "report_a": "APR-001-A",
+        "report_b": "APR-001-B",
+        "variance_usd": 35000.0
+      }
+    },
+    {
+      "record_id": "71b9fab5-7ca1-4d3d-95c9-732ebe59f2e1",
+      "timestamp": "2026-05-16T21:23:11.499720+00:00",
+      "use_case": "credit_decision",
+      "loan_application_id": "LA-006",
+      "ai_output_summary": "Credit decision explanation for LA-006 (DENIED). Primary denial reason: Excessive debt-to-income ratio of 53.2% (Code 010). Secondary reason: Insufficient income relative to obligations (Code 002). WARNING: Reason codes 999 and ABC are not recognized CFPB adverse action codes and must be replaced be",
+      "faithfulness_score": 0.25,
+      "relevance_score": 0.2812,
+      "accuracy_score": 1.0,
+      "composite_score": 0.4844,
+      "intent_confidence": 1.0,
+      "transaction_confidence": 1.0,
+      "combined_confidence": 1.0,
+      "routing_decision": "AUTO_APPROVE",
+      "routing_reason": "Confidence 1.000 exceeds auto-approve threshold 0.85. Flags: none",
+      "flags": [],
+      "metadata": {
+        "compliance_check_passed": false,
+        "cfpb_citation": "15 U.S.C. 1691(d); 15 U.S.C. 1681m"
+      }
+    },
+    {
+      "record_id": "7f582119-46d9-4aac-9534-18035b62b515",
+      "timestamp": "2026-05-16T21:23:11.501716+00:00",
+      "use_case": "document_lineage",
+      "loan_application_id": "LA-005",
+      "ai_output_summary": "Document version analysis for application LA-005 W-2 documents. Three versions found in the loan file. Authoritative document identified: DOC-001-v3 (Version 3). Uploaded on 2026-02-22 by underwriter_kdavis. Lineage chain: DOC-001-v1 \u2192 DOC-001-v2 \u2192 DOC-001-v3 (current authoritative). Versions 1 and ",
+      "faithfulness_score": 0.5324,
+      "relevance_score": 0.3792,
+      "accuracy_score": 1.0,
+      "composite_score": 0.6267,
+      "intent_confidence": 1.0,
+      "transaction_confidence": 1.0,
+      "combined_confidence": 1.0,
+      "routing_decision": "AUTO_APPROVE",
+      "routing_reason": "Confidence 1.000 exceeds auto-approve threshold 0.85. Flags: none",
+      "flags": [],
+      "metadata": {
+        "total_versions": 3,
+        "authoritative_uploaded_by": "underwriter_kdavis"
+      }
+    }
+  ]
+}
