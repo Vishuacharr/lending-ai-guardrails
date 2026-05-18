@@ -245,7 +245,7 @@ def main() -> None:
 
     st.divider()
     st.caption(
-        "mortgage-eval-harness | Built for Supreme Lending interview | "
+        "lending-ai-guardrails | Built for Supreme Lending interview | "
         "Zero API calls | Rule-based evaluation engine"
     )
 

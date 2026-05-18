@@ -1,6 +1,6 @@
-# Mortgage AI Evaluation Harness
+# Lending AI Guardrails
 
-> **Production-grade framework for monitoring, scoring, and auditing AI outputs in mortgage pipelines.**
+> **Production-grade framework for monitoring, scoring, and auditing AI outputs in lending and financing pipelines.**
 > Zero LLM API calls. Rule-based evaluation engine. CFPB-compliant audit trail.
 
 Built for the Supreme Lending interview — Solution #1: *"Guessing is unacceptable."*
@@ -240,7 +240,7 @@ This makes the harness:
 ## Project Structure
 
 ```
-mortgage-eval-harness/
+lending-ai-guardrails/
 ├── core/
 │   ├── __init__.py
 │   ├── evaluator.py      # Main orchestrator
