@@ -31,7 +31,22 @@ MORTGAGE_BOUNDS = {
     "credit_score": (300, 850),
     "closing_costs": (0, 200_000),
     "interest_rate": (0.001, 0.30),
+    # Discrepancy/variance signals are computable at inference time (source
+    # doc vs. stated application value) without requiring ground truth —
+    # they're legitimate transaction-level plausibility checks.
+    "discrepancy_pct": (0.0, 0.10),
+    "value_variance_pct": (0.0, 0.10),
 }
+
+# Boolean fields that must be True for the transaction to be considered
+# plausible. False indicates a self-reported integrity problem (broken
+# document lineage, unbalanced Closing Disclosure) that no downstream
+# ground-truth comparison is needed to detect.
+REQUIRED_TRUE_FLAGS = {"lineage_intact", "balanced"}
+
+# List-valued fields that must be empty; a non-empty list is a self-reported
+# violation (e.g. invalid CFPB reason codes surfaced by the AI itself).
+REQUIRED_EMPTY_LISTS = {"invalid_codes_detected"}
 
 
 @dataclass
@@ -100,6 +115,23 @@ def score_transaction_confidence(
                 )
         except (ValueError, TypeError):
             violations.append(f"{field} has non-numeric value: {value!r}")
+
+    for key in REQUIRED_TRUE_FLAGS:
+        if key in extracted_fields:
+            checked += 1
+            if extracted_fields[key] is True:
+                passed += 1
+            else:
+                violations.append(f"{key}={extracted_fields[key]!r} expected True")
+
+    for key in REQUIRED_EMPTY_LISTS:
+        if key in extracted_fields:
+            checked += 1
+            value = extracted_fields[key]
+            if not value:
+                passed += 1
+            else:
+                violations.append(f"{key} is non-empty: {value!r}")
 
     score = (passed / checked) if checked > 0 else 1.0
     return round(score, 4), violations

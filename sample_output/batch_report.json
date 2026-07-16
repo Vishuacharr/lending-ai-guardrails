@@ -1,0 +1,591 @@
+{
+  "generated_at": "2026-07-16T15:58:49.814144+00:00",
+  "summary": {
+    "total_evaluations": 24,
+    "auto_approve_count": 7,
+    "human_review_count": 11,
+    "reject_count": 6,
+    "auto_approve_rate": 0.2917,
+    "human_review_rate": 0.4583,
+    "reject_rate": 0.25,
+    "avg_faithfulness": 0.2886,
+    "avg_relevance": 0.2945,
+    "avg_accuracy": 0.8333,
+    "avg_confidence": 0.7674
+  },
+  "records": [
+    {
+      "record_id": "7991705f-37b5-4e03-9a6c-8778e4c57983",
+      "timestamp": "2026-07-16T15:58:49.794428+00:00",
+      "use_case": "income_verification",
+      "loan_application_id": "LA-101",
+      "ai_output_summary": "Income verification complete for application LA-101. Gross annual income extracted from W-2 Box 1: $92,400.00. Monthly equivalent: $7,700.00. Income matches borrower-stated amount \u2014 no discrepancy.",
+      "faithfulness_score": 0.1657,
+      "relevance_score": 0.3407,
+      "accuracy_score": 1.0,
+      "composite_score": 0.4685,
+      "intent_confidence": 1.0,
+      "transaction_confidence": 1.0,
+      "combined_confidence": 1.0,
+      "routing_decision": "AUTO_APPROVE",
+      "routing_reason": "Confidence 1.000 exceeds auto-approve threshold 0.85. Flags: none",
+      "flags": [],
+      "metadata": {
+        "document_type": "W2",
+        "scenario_id": "S-001",
+        "issue_type": "clean"
+      }
+    },
+    {
+      "record_id": "96178aa3-5867-4304-a4c0-4ed18971168c",
+      "timestamp": "2026-07-16T15:58:49.796210+00:00",
+      "use_case": "income_verification",
+      "loan_application_id": "LA-102",
+      "ai_output_summary": "Income verification complete for application LA-102. Gross annual income extracted from paystub YTD: $118,300.00. Monthly equivalent: $9,858.33. Matches stated income of $118,300 \u2014 verified.",
+      "faithfulness_score": 0.1839,
+      "relevance_score": 0.318,
+      "accuracy_score": 1.0,
+      "composite_score": 0.469,
+      "intent_confidence": 1.0,
+      "transaction_confidence": 1.0,
+      "combined_confidence": 1.0,
+      "routing_decision": "AUTO_APPROVE",
+      "routing_reason": "Confidence 1.000 exceeds auto-approve threshold 0.85. Flags: none",
+      "flags": [],
+      "metadata": {
+        "document_type": "PAYSTUB",
+        "scenario_id": "S-002",
+        "issue_type": "clean"
+      }
+    },
+    {
+      "record_id": "9e44c354-fcf6-40a2-b3c2-a75bfdd75859",
+      "timestamp": "2026-07-16T15:58:49.797298+00:00",
+      "use_case": "appraisal_comparison",
+      "loan_application_id": "LA-103",
+      "ai_output_summary": "Appraisal review for LA-103: single report submitted, no conflicting values. Appraised value $310,000 supported by three comparable sales within 5% variance. No conflict detected \u2014 value accepted as-is.",
+      "faithfulness_score": 0.1947,
+      "relevance_score": 0.2937,
+      "accuracy_score": 1.0,
+      "composite_score": 0.466,
+      "intent_confidence": 1.0,
+      "transaction_confidence": 1.0,
+      "combined_confidence": 1.0,
+      "routing_decision": "AUTO_APPROVE",
+      "routing_reason": "Confidence 1.000 exceeds auto-approve threshold 0.85. Flags: none",
+      "flags": [],
+      "metadata": {
+        "document_type": "APPRAISAL",
+        "scenario_id": "S-003",
+        "issue_type": "clean"
+      }
+    },
+    {
+      "record_id": "3c41fae9-4a8d-44a9-bc0c-3660ce7e86dc",
+      "timestamp": "2026-07-16T15:58:49.798005+00:00",
+      "use_case": "credit_decision",
+      "loan_application_id": "LA-104",
+      "ai_output_summary": "Credit decision explanation for LA-104 (APPROVED). Borrower meets all underwriting guidelines. No adverse action required \u2014 reason code check not applicable for approvals.",
+      "faithfulness_score": 0.4141,
+      "relevance_score": 0.2267,
+      "accuracy_score": 1.0,
+      "composite_score": 0.5336,
+      "intent_confidence": 1.0,
+      "transaction_confidence": 1.0,
+      "combined_confidence": 1.0,
+      "routing_decision": "AUTO_APPROVE",
+      "routing_reason": "Confidence 1.000 exceeds auto-approve threshold 0.85. Flags: none",
+      "flags": [],
+      "metadata": {
+        "compliance_check_passed": true,
+        "scenario_id": "S-004",
+        "issue_type": "clean"
+      }
+    },
+    {
+      "record_id": "0ffe1ab6-3f26-43f7-b9ca-6a7f3535b7ad",
+      "timestamp": "2026-07-16T15:58:49.798614+00:00",
+      "use_case": "document_lineage",
+      "loan_application_id": "LA-105",
+      "ai_output_summary": "Document version analysis for LA-105 bank statements. Two versions found. Authoritative document identified: DOC-105-v2 (Version 2), uploaded by underwriter_mlee. Lineage chain intact: v1 -> v2.",
+      "faithfulness_score": 0.6206,
+      "relevance_score": 0.3057,
+      "accuracy_score": 1.0,
+      "composite_score": 0.64,
+      "intent_confidence": 1.0,
+      "transaction_confidence": 1.0,
+      "combined_confidence": 1.0,
+      "routing_decision": "AUTO_APPROVE",
+      "routing_reason": "Confidence 1.000 exceeds auto-approve threshold 0.85. Flags: none",
+      "flags": [],
+      "metadata": {
+        "document_type": "BANK_STATEMENT",
+        "scenario_id": "S-005",
+        "issue_type": "clean"
+      }
+    },
+    {
+      "record_id": "80afa675-6f62-4ad4-adc6-2e9046cd0f8d",
+      "timestamp": "2026-07-16T15:58:49.799256+00:00",
+      "use_case": "closing_disclosure",
+      "loan_application_id": "LA-106",
+      "ai_output_summary": "Closing Disclosure generated for LA-106. Total closing costs: $8,400.00. Line items sum to $8,400.00 \u2014 CD balances. No TRID violation detected.",
+      "faithfulness_score": 0.0547,
+      "relevance_score": 0.2205,
+      "accuracy_score": 1.0,
+      "composite_score": 0.388,
+      "intent_confidence": 0.6667,
+      "transaction_confidence": 1.0,
+      "combined_confidence": 0.8334,
+      "routing_decision": "HUMAN_REVIEW",
+      "routing_reason": "Confidence 0.833 is in human-review range [0.6, 0.85). Flags: Missing expected field: cash_to_close",
+      "flags": [
+        "Missing expected field: cash_to_close"
+      ],
+      "metadata": {
+        "trid_check": "Closing Disclosure balances",
+        "scenario_id": "S-006",
+        "issue_type": "clean"
+      }
+    },
+    {
+      "record_id": "2b59c59b-42fb-409f-aef8-bfb32a73b5af",
+      "timestamp": "2026-07-16T15:58:49.799787+00:00",
+      "use_case": "income_verification",
+      "loan_application_id": "LA-107",
+      "ai_output_summary": "Income verification complete for LA-107. Gross annual income extracted from tax return line 1: $76,500.00. Monthly equivalent: $6,375.00. Matches stated income \u2014 verified, no discrepancy.",
+      "faithfulness_score": 0.126,
+      "relevance_score": 0.352,
+      "accuracy_score": 1.0,
+      "composite_score": 0.456,
+      "intent_confidence": 1.0,
+      "transaction_confidence": 1.0,
+      "combined_confidence": 1.0,
+      "routing_decision": "AUTO_APPROVE",
+      "routing_reason": "Confidence 1.000 exceeds auto-approve threshold 0.85. Flags: none",
+      "flags": [],
+      "metadata": {
+        "document_type": "TAX_RETURN",
+        "scenario_id": "S-007",
+        "issue_type": "clean"
+      }
+    },
+    {
+      "record_id": "544f7ae3-daea-4abe-a1d9-032eaff89e24",
+      "timestamp": "2026-07-16T15:58:49.800378+00:00",
+      "use_case": "credit_decision",
+      "loan_application_id": "LA-108",
+      "ai_output_summary": "Credit decision explanation for LA-108 (DENIED). Reason codes 007 (insufficient collateral value) and 010 (excessive obligations) both verified against CFPB-approved list. Adverse action notice compliant.",
+      "faithfulness_score": 0.4831,
+      "relevance_score": 0.2773,
+      "accuracy_score": 1.0,
+      "composite_score": 0.5764,
+      "intent_confidence": 1.0,
+      "transaction_confidence": 1.0,
+      "combined_confidence": 1.0,
+      "routing_decision": "AUTO_APPROVE",
+      "routing_reason": "Confidence 1.000 exceeds auto-approve threshold 0.85. Flags: none",
+      "flags": [],
+      "metadata": {
+        "compliance_check_passed": true,
+        "scenario_id": "S-008",
+        "issue_type": "clean"
+      }
+    },
+    {
+      "record_id": "73d62ad4-cb48-4653-8885-6016b320ade2",
+      "timestamp": "2026-07-16T15:58:49.801350+00:00",
+      "use_case": "income_verification",
+      "loan_application_id": "LA-109",
+      "ai_output_summary": "Income verification for LA-109. Gross annual income extracted from W-2 Box 1: $61,200.00. Monthly equivalent: $5,100.00. Borrower stated income on application was $84,000 \u2014 DISCREPANCY of 27.1% detected. Requires manual review before proceeding.",
+      "faithfulness_score": 0.1603,
+      "relevance_score": 0.2934,
+      "accuracy_score": 1.0,
+      "composite_score": 0.4521,
+      "intent_confidence": 1.0,
+      "transaction_confidence": 0.6667,
+      "combined_confidence": 0.8334,
+      "routing_decision": "HUMAN_REVIEW",
+      "routing_reason": "Confidence 0.833 is in human-review range [0.6, 0.85). Flags: discrepancy_pct=0.271 out of plausible range [0.0, 0.1]",
+      "flags": [
+        "discrepancy_pct=0.271 out of plausible range [0.0, 0.1]"
+      ],
+      "metadata": {
+        "document_type": "W2",
+        "stated_income": 84000.0,
+        "scenario_id": "S-009",
+        "issue_type": "income_mismatch"
+      }
+    },
+    {
+      "record_id": "000d7786-7045-4018-8772-88bc231e5919",
+      "timestamp": "2026-07-16T15:58:49.802192+00:00",
+      "use_case": "income_verification",
+      "loan_application_id": "LA-110",
+      "ai_output_summary": "Income verification for LA-110. Gross annual income extracted from paystub YTD annualized: $138,000.00. Borrower stated income was $102,000 \u2014 extracted value is 35.3% HIGHER than stated. Flag for underwriter: possible bonus/commission inflation or extraction error.",
+      "faithfulness_score": 0.1632,
+      "relevance_score": 0.3075,
+      "accuracy_score": 1.0,
+      "composite_score": 0.4575,
+      "intent_confidence": 1.0,
+      "transaction_confidence": 0.6667,
+      "combined_confidence": 0.8334,
+      "routing_decision": "HUMAN_REVIEW",
+      "routing_reason": "Confidence 0.833 is in human-review range [0.6, 0.85). Flags: discrepancy_pct=0.353 out of plausible range [0.0, 0.1]",
+      "flags": [
+        "discrepancy_pct=0.353 out of plausible range [0.0, 0.1]"
+      ],
+      "metadata": {
+        "document_type": "PAYSTUB",
+        "stated_income": 102000.0,
+        "scenario_id": "S-010",
+        "issue_type": "income_mismatch"
+      }
+    },
+    {
+      "record_id": "b8ee08e5-7159-4fcd-bf70-a2aa59d17351",
+      "timestamp": "2026-07-16T15:58:49.802931+00:00",
+      "use_case": "income_verification",
+      "loan_application_id": "LA-111",
+      "ai_output_summary": "Income verification for LA-111. Gross annual income extracted from tax return: $54,900.00. Borrower stated income on the loan application was $71,500 \u2014 DISCREPANCY of 23.2%. Self-employed borrower; review Schedule C deductions before finalizing.",
+      "faithfulness_score": 0.1006,
+      "relevance_score": 0.2881,
+      "accuracy_score": 1.0,
+      "composite_score": 0.4267,
+      "intent_confidence": 1.0,
+      "transaction_confidence": 0.6667,
+      "combined_confidence": 0.8334,
+      "routing_decision": "HUMAN_REVIEW",
+      "routing_reason": "Confidence 0.833 is in human-review range [0.6, 0.85). Flags: discrepancy_pct=0.232 out of plausible range [0.0, 0.1]",
+      "flags": [
+        "discrepancy_pct=0.232 out of plausible range [0.0, 0.1]"
+      ],
+      "metadata": {
+        "document_type": "TAX_RETURN",
+        "stated_income": 71500.0,
+        "scenario_id": "S-011",
+        "issue_type": "income_mismatch"
+      }
+    },
+    {
+      "record_id": "90f89fd0-c1fa-4f23-b427-0fbb31589d20",
+      "timestamp": "2026-07-16T15:58:49.803687+00:00",
+      "use_case": "income_verification",
+      "loan_application_id": "LA-112",
+      "ai_output_summary": "Income verification for LA-112. Gross annual income extracted from W-2 Box 1: $99,750.00. Borrower stated income was $115,000 \u2014 DISCREPANCY of 13.3%. Below the 15% auto-flag threshold but still outside plausible tolerance for auto-approval.",
+      "faithfulness_score": 0.1227,
+      "relevance_score": 0.3241,
+      "accuracy_score": 1.0,
+      "composite_score": 0.4463,
+      "intent_confidence": 1.0,
+      "transaction_confidence": 0.6667,
+      "combined_confidence": 0.8334,
+      "routing_decision": "HUMAN_REVIEW",
+      "routing_reason": "Confidence 0.833 is in human-review range [0.6, 0.85). Flags: discrepancy_pct=0.133 out of plausible range [0.0, 0.1]",
+      "flags": [
+        "discrepancy_pct=0.133 out of plausible range [0.0, 0.1]"
+      ],
+      "metadata": {
+        "document_type": "W2",
+        "stated_income": 115000.0,
+        "scenario_id": "S-012",
+        "issue_type": "income_mismatch"
+      }
+    },
+    {
+      "record_id": "a37dd203-f588-4f1d-8709-966f4b73250d",
+      "timestamp": "2026-07-16T15:58:49.804387+00:00",
+      "use_case": "document_lineage",
+      "loan_application_id": "LA-113",
+      "ai_output_summary": "Document version analysis for LA-113 W-2 documents. AI identified DOC-113-v1 as authoritative, but v2 was uploaded later by the underwriter and supersedes v1. INCORRECT VERSION SELECTED \u2014 stale document would have been used for income calculation.",
+      "faithfulness_score": 0.4776,
+      "relevance_score": 0.3889,
+      "accuracy_score": 0.0,
+      "composite_score": 0.3077,
+      "intent_confidence": 1.0,
+      "transaction_confidence": 0.0,
+      "combined_confidence": 0.5,
+      "routing_decision": "REJECT",
+      "routing_reason": "Confidence 0.500 below rejection threshold 0.6. Flags: lineage_intact=False expected True",
+      "flags": [
+        "lineage_intact=False expected True"
+      ],
+      "metadata": {
+        "document_type": "W2",
+        "scenario_id": "S-013",
+        "issue_type": "document_version_conflict"
+      }
+    },
+    {
+      "record_id": "94ab84d3-56a9-45cb-9715-878f4081e96e",
+      "timestamp": "2026-07-16T15:58:49.805150+00:00",
+      "use_case": "document_lineage",
+      "loan_application_id": "LA-114",
+      "ai_output_summary": "Document version analysis for LA-114 bank statements. Three versions found in the loan file, but lineage chain is BROKEN \u2014 v2 does not reference v1 as its predecessor. Cannot confirm v3 is genuinely the latest authoritative copy without manual trace.",
+      "faithfulness_score": 0.2023,
+      "relevance_score": 0.2985,
+      "accuracy_score": 0.5,
+      "composite_score": 0.3205,
+      "intent_confidence": 1.0,
+      "transaction_confidence": 0.0,
+      "combined_confidence": 0.5,
+      "routing_decision": "REJECT",
+      "routing_reason": "Confidence 0.500 below rejection threshold 0.6. Flags: lineage_intact=False expected True",
+      "flags": [
+        "lineage_intact=False expected True"
+      ],
+      "metadata": {
+        "document_type": "BANK_STATEMENT",
+        "scenario_id": "S-014",
+        "issue_type": "document_version_conflict"
+      }
+    },
+    {
+      "record_id": "13a83411-fd89-4ba9-9723-61bcef109c09",
+      "timestamp": "2026-07-16T15:58:49.805842+00:00",
+      "use_case": "document_lineage",
+      "loan_application_id": "LA-115",
+      "ai_output_summary": "Document version analysis for LA-115 appraisal documents. AI returned DOC-115-v1 as authoritative. Cross-check shows two competing 'authoritative' flags set (v1 and v2) \u2014 data integrity conflict in source system, cannot resolve automatically.",
+      "faithfulness_score": 0.3665,
+      "relevance_score": 0.2783,
+      "accuracy_score": 0.0,
+      "composite_score": 0.2301,
+      "intent_confidence": 1.0,
+      "transaction_confidence": 0.0,
+      "combined_confidence": 0.5,
+      "routing_decision": "REJECT",
+      "routing_reason": "Confidence 0.500 below rejection threshold 0.6. Flags: lineage_intact=False expected True",
+      "flags": [
+        "lineage_intact=False expected True"
+      ],
+      "metadata": {
+        "document_type": "APPRAISAL",
+        "scenario_id": "S-015",
+        "issue_type": "document_version_conflict"
+      }
+    },
+    {
+      "record_id": "29c76303-c9d5-4e48-9fc7-ca054b2dbbc6",
+      "timestamp": "2026-07-16T15:58:49.806572+00:00",
+      "use_case": "document_lineage",
+      "loan_application_id": "LA-116",
+      "ai_output_summary": "Document version analysis for LA-116 closing disclosure drafts. Four revisions found \u2014 AI selected v3 as authoritative, but v4 was uploaded 2 hours later by the closer with the final rate lock adjustment. Superseded draft would have been used.",
+      "faithfulness_score": 0.3243,
+      "relevance_score": 0.34,
+      "accuracy_score": 0.0,
+      "composite_score": 0.2317,
+      "intent_confidence": 1.0,
+      "transaction_confidence": 0.0,
+      "combined_confidence": 0.5,
+      "routing_decision": "REJECT",
+      "routing_reason": "Confidence 0.500 below rejection threshold 0.6. Flags: lineage_intact=False expected True",
+      "flags": [
+        "lineage_intact=False expected True"
+      ],
+      "metadata": {
+        "document_type": "CLOSING_DISCLOSURE",
+        "scenario_id": "S-016",
+        "issue_type": "document_version_conflict"
+      }
+    },
+    {
+      "record_id": "48974712-260c-4bf9-bff4-a0cc0f3a953b",
+      "timestamp": "2026-07-16T15:58:49.807176+00:00",
+      "use_case": "closing_disclosure",
+      "loan_application_id": "LA-117",
+      "ai_output_summary": "Closing Disclosure generated for LA-117. Total closing costs: $7,800.00. Line items identified sum to $5,400.00. WARNING: CD does not balance. Discrepancy of $2,400. TRID violation \u2014 requires correction before closing.",
+      "faithfulness_score": 0.1779,
+      "relevance_score": 0.2288,
+      "accuracy_score": 1.0,
+      "composite_score": 0.4398,
+      "intent_confidence": 0.6667,
+      "transaction_confidence": 0.6667,
+      "combined_confidence": 0.6667,
+      "routing_decision": "HUMAN_REVIEW",
+      "routing_reason": "Confidence 0.667 is in human-review range [0.6, 0.85). Flags: Missing expected field: cash_to_close; balanced=False expected True",
+      "flags": [
+        "Missing expected field: cash_to_close",
+        "balanced=False expected True"
+      ],
+      "metadata": {
+        "severity": "VIOLATION",
+        "scenario_id": "S-017",
+        "issue_type": "cd_imbalance"
+      }
+    },
+    {
+      "record_id": "ea2a1fad-3353-4673-8dfa-4c7ae1b71728",
+      "timestamp": "2026-07-16T15:58:49.807730+00:00",
+      "use_case": "closing_disclosure",
+      "loan_application_id": "LA-118",
+      "ai_output_summary": "Closing Disclosure generated for LA-118. Total closing costs: $11,200.00. Line item sum: $12,850.00. WARNING: CD OVER-balances by $1,650 \u2014 itemized fees exceed stated total. TRID violation, requires correction.",
+      "faithfulness_score": 0.3051,
+      "relevance_score": 0.2421,
+      "accuracy_score": 1.0,
+      "composite_score": 0.4947,
+      "intent_confidence": 0.6667,
+      "transaction_confidence": 0.6667,
+      "combined_confidence": 0.6667,
+      "routing_decision": "HUMAN_REVIEW",
+      "routing_reason": "Confidence 0.667 is in human-review range [0.6, 0.85). Flags: Missing expected field: cash_to_close; balanced=False expected True",
+      "flags": [
+        "Missing expected field: cash_to_close",
+        "balanced=False expected True"
+      ],
+      "metadata": {
+        "severity": "VIOLATION",
+        "scenario_id": "S-018",
+        "issue_type": "cd_imbalance"
+      }
+    },
+    {
+      "record_id": "21511f47-d8ec-477d-bcb6-bcabd7982399",
+      "timestamp": "2026-07-16T15:58:49.808430+00:00",
+      "use_case": "closing_disclosure",
+      "loan_application_id": "LA-119",
+      "ai_output_summary": "Closing Disclosure generated for LA-119. Total closing costs: $6,050.00. Line item sum: $6,050.00 \u2014 appears balanced at the summary level, but prepaid items total ($4,200) was double-counted inside both Section G and Section H. Net effect: cash-to-close understated by $2,100.",
+      "faithfulness_score": 0.2831,
+      "relevance_score": 0.2195,
+      "accuracy_score": 1.0,
+      "composite_score": 0.4791,
+      "intent_confidence": 0.6667,
+      "transaction_confidence": 0.6667,
+      "combined_confidence": 0.6667,
+      "routing_decision": "HUMAN_REVIEW",
+      "routing_reason": "Confidence 0.667 is in human-review range [0.6, 0.85). Flags: Missing expected field: cash_to_close; balanced=False expected True",
+      "flags": [
+        "Missing expected field: cash_to_close",
+        "balanced=False expected True"
+      ],
+      "metadata": {
+        "severity": "VIOLATION",
+        "scenario_id": "S-019",
+        "issue_type": "cd_imbalance"
+      }
+    },
+    {
+      "record_id": "94950b08-bae3-4a80-9001-20d9c3cd62c7",
+      "timestamp": "2026-07-16T15:58:49.809028+00:00",
+      "use_case": "closing_disclosure",
+      "loan_application_id": "LA-120",
+      "ai_output_summary": "Closing Disclosure generated for LA-120. Total closing costs: $9,900.00. Line item sum: $7,300.00. CD does not balance \u2014 discrepancy of $2,600. Missing Section F (insurance) entirely from the itemization. TRID violation, correction required.",
+      "faithfulness_score": 0.2064,
+      "relevance_score": 0.2486,
+      "accuracy_score": 1.0,
+      "composite_score": 0.4571,
+      "intent_confidence": 0.6667,
+      "transaction_confidence": 0.6667,
+      "combined_confidence": 0.6667,
+      "routing_decision": "HUMAN_REVIEW",
+      "routing_reason": "Confidence 0.667 is in human-review range [0.6, 0.85). Flags: Missing expected field: cash_to_close; balanced=False expected True",
+      "flags": [
+        "Missing expected field: cash_to_close",
+        "balanced=False expected True"
+      ],
+      "metadata": {
+        "severity": "VIOLATION",
+        "scenario_id": "S-020",
+        "issue_type": "cd_imbalance"
+      }
+    },
+    {
+      "record_id": "0d2b0cc7-c3cb-4698-9449-850ffd667eba",
+      "timestamp": "2026-07-16T15:58:49.809548+00:00",
+      "use_case": "credit_decision",
+      "loan_application_id": "LA-121",
+      "ai_output_summary": "Credit decision explanation for LA-121 (DENIED). Primary reason: internal risk code 'RSK-9' used instead of a CFPB-approved reason code. Code is NOT on the ECOA/FCRA approved list \u2014 adverse action notice cannot be issued as-is.",
+      "faithfulness_score": 0.4444,
+      "relevance_score": 0.3611,
+      "accuracy_score": 1.0,
+      "composite_score": 0.5861,
+      "intent_confidence": 1.0,
+      "transaction_confidence": 0.0,
+      "combined_confidence": 0.5,
+      "routing_decision": "REJECT",
+      "routing_reason": "Confidence 0.500 below rejection threshold 0.6. Flags: invalid_codes_detected is non-empty: ['RSK-9']",
+      "flags": [
+        "invalid_codes_detected is non-empty: ['RSK-9']"
+      ],
+      "metadata": {
+        "compliance_check_passed": false,
+        "cfpb_citation": "15 U.S.C. 1691(d)",
+        "scenario_id": "S-021",
+        "issue_type": "compliance_violation"
+      }
+    },
+    {
+      "record_id": "7c4fbed3-f307-41d7-9553-fb262d555b2b",
+      "timestamp": "2026-07-16T15:58:49.810016+00:00",
+      "use_case": "credit_decision",
+      "loan_application_id": "LA-122",
+      "ai_output_summary": "Credit decision explanation for LA-122 (DENIED). Reason codes 'X01' and '077' returned by the decision engine. Neither code appears in the CFPB-approved list \u2014 both flagged as non-compliant, adverse action notice blocked pending correction.",
+      "faithfulness_score": 0.5222,
+      "relevance_score": 0.3745,
+      "accuracy_score": 1.0,
+      "composite_score": 0.6212,
+      "intent_confidence": 1.0,
+      "transaction_confidence": 0.0,
+      "combined_confidence": 0.5,
+      "routing_decision": "REJECT",
+      "routing_reason": "Confidence 0.500 below rejection threshold 0.6. Flags: invalid_codes_detected is non-empty: ['X01', '077']",
+      "flags": [
+        "invalid_codes_detected is non-empty: ['X01', '077']"
+      ],
+      "metadata": {
+        "compliance_check_passed": false,
+        "scenario_id": "S-022",
+        "issue_type": "compliance_violation"
+      }
+    },
+    {
+      "record_id": "8a6b292b-9e3d-4d66-9077-c7301261d3b3",
+      "timestamp": "2026-07-16T15:58:49.811064+00:00",
+      "use_case": "appraisal_comparison",
+      "loan_application_id": "LA-123",
+      "ai_output_summary": "Appraisal comparison for LA-123: two reports submitted with conflicting values. Report A values property at $420,000; Report B at $355,000. Variance: $65,000 (15.5%) \u2014 exceeds the 10% maximum variance threshold. AI selected the HIGHER value for LTV calculation, which violates conservative-value inve",
+      "faithfulness_score": 0.4373,
+      "relevance_score": 0.2153,
+      "accuracy_score": 0.5,
+      "composite_score": 0.3895,
+      "intent_confidence": 1.0,
+      "transaction_confidence": 0.5,
+      "combined_confidence": 0.75,
+      "routing_decision": "HUMAN_REVIEW",
+      "routing_reason": "Confidence 0.750 is in human-review range [0.6, 0.85). Flags: value_variance_pct=0.155 out of plausible range [0.0, 0.1]",
+      "flags": [
+        "value_variance_pct=0.155 out of plausible range [0.0, 0.1]"
+      ],
+      "metadata": {
+        "variance_usd": 65000.0,
+        "scenario_id": "S-023",
+        "issue_type": "compliance_violation"
+      }
+    },
+    {
+      "record_id": "954925e5-a2b0-493a-bf56-3d983b85b5fb",
+      "timestamp": "2026-07-16T15:58:49.812371+00:00",
+      "use_case": "closing_disclosure",
+      "loan_application_id": "LA-124",
+      "ai_output_summary": "Closing Disclosure generated for LA-124. Total closing costs: $15,400.00 against a $180,000 loan \u2014 closing costs represent 8.6% of loan amount, well above the typical 3-5% norm. Combined with a 98.5% LTV, this exceeds conventional investor LTV limits. Compliance flag raised on LTV overlay.",
+      "faithfulness_score": 0.3888,
+      "relevance_score": 0.3239,
+      "accuracy_score": 1.0,
+      "composite_score": 0.5527,
+      "intent_confidence": 0.6667,
+      "transaction_confidence": 1.0,
+      "combined_confidence": 0.8334,
+      "routing_decision": "HUMAN_REVIEW",
+      "routing_reason": "Confidence 0.833 is in human-review range [0.6, 0.85). Flags: Missing expected field: cash_to_close",
+      "flags": [
+        "Missing expected field: cash_to_close"
+      ],
+      "metadata": {
+        "ltv_ratio": 0.985,
+        "ltv_limit": 0.97,
+        "severity": "VIOLATION",
+        "scenario_id": "S-024",
+        "issue_type": "compliance_violation"
+      }
+    }
+  ]
+}

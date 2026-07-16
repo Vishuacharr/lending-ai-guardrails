@@ -1,9 +1,53 @@
 # Lending AI Guardrails
 
 > **Production-grade framework for monitoring, scoring, and auditing AI outputs in lending and financing pipelines.**
-> Zero LLM API calls. Rule-based evaluation engine. CFPB-compliant audit trail.
+> Zero LLM API calls. Rule-based evaluation engine. CFPB-compliant audit trail. Validated on a 24-scenario anonymized batch with measured before/after KPIs.
 
 Built for the Supreme Lending interview — Solution #1: *"Guessing is unacceptable."*
+
+---
+
+## KPI Dashboard — Measured Impact
+
+The Streamlit dashboard's **KPI Dashboard** tab computes real, measurable before/after
+numbers by running the harness against a labeled 24-scenario validation batch
+(see [Validation Batch](#validation-batch--24-anonymized-loan-scenarios) below) and
+comparing the results against illustrative manual-QC industry baselines:
+
+| KPI | Manual Baseline | Post-Harness | Change |
+|-----|-----------------|--------------|--------|
+| Processing time / loan | 45 min | sub-millisecond | ~100% reduction |
+| Error rate (undetected defects) | 12% | measured false-negative rate | typically >90% reduction |
+| Compliance score | 78% | measured catch rate on compliance-relevant defects | double-digit uplift |
+| Cost per loan | ~$34 | ~$6 (review-weighted) | ~$27+/loan saved |
+| Human review rate | n/a | measured % routed to underwriter queue | — |
+| False positive / negative rate | n/a | measured on labeled scenarios | — |
+
+The "before" figures are illustrative industry-range baselines (see `core/kpi.py` for
+sourcing notes) — swap in your organization's actual historical metrics for a
+production estimate. The "after" figures are computed directly from the batch run,
+not simulated.
+
+---
+
+## Validation Batch — 24 Anonymized Loan Scenarios
+
+`mortgage/batch_scenarios.py` contains 24 synthetic loan records (fictional names,
+SSNs, addresses) labeled with ground-truth `has_issue` / `issue_type` flags:
+
+| Category | Count | Description |
+|----------|-------|--------------|
+| Clean | 8 | No injected defect — should auto-approve |
+| Income mismatch | 4 | Extracted income diverges from stated income (13-35%) |
+| Document version conflict | 4 | Wrong/stale document version, broken lineage |
+| CD imbalance | 4 | Closing Disclosure line items don't sum to stated total (TRID) |
+| Compliance violation | 4 | Invalid CFPB reason codes, LTV/appraisal guideline breach |
+
+Run the batch and see the full labeled results:
+```bash
+python app.py --report
+```
+or launch the dashboard and open the **Validation Batch (24)** tab.
 
 ---
 
@@ -56,11 +100,14 @@ graph TD
 | `core/confidence.py` | Two-level confidence: intent fields + plausibility bounds |
 | `core/router.py` | Three-way routing with configurable thresholds |
 | `core/audit_logger.py` | Immutable append-only JSONL audit trail |
+| `core/batch_runner.py` | Runs the 24-scenario validation batch, timed and labeled |
+| `core/kpi.py` | Before/after KPI computation (time, error rate, cost, compliance) |
 | `mortgage/schemas.py` | Pydantic models for every domain object |
 | `mortgage/rules.py` | Simplified TRID/RESPA/ECOA compliance checks |
 | `mortgage/sample_data.py` | 10+ realistic synthetic loan applications |
+| `mortgage/batch_scenarios.py` | 24 labeled anonymized validation scenarios |
 | `mortgage/use_cases.py` | Five end-to-end mortgage scenarios |
-| `ui/dashboard.py` | Streamlit real-time metrics dashboard |
+| `ui/dashboard.py` | Streamlit dashboard — KPIs, validation batch, use cases, audit log |
 
 ---
 
@@ -194,7 +241,7 @@ This is the CFPB-defensible piece. If a regulator asks "why did your system appr
 # 1. Install dependencies
 pip install -r requirements.txt
 
-# 2. Run tests (37 tests)
+# 2. Run tests (54 tests)
 python -m pytest tests/ -v
 
 # 3. Headless report
